@@ -1,5 +1,5 @@
 പാതാള കാവൽ (Pātāḷa Kāval) — The Underworld Guard
-A Physical AI Installation for the TinkerHub Physical AI Hackathon — Onam Edition.
+A Physical AI Installation for the Google Physical AI Hackathon — Onam Edition.
 
 According to legend, King Mahabali visits Kerala once a year on Thiruvonam. In this physical game installation, the player steps into Mahabali's shoes for a 3-minute shift to manage the daily operations and hazards of the Underworld (Pātāḷam) so the King can visit his people. You are guided (and mercilessly mocked) by Maveli AI, a sarcastic, spectacles-wearing Underworld office assistant delivering real-time Malayalam commentary.
 
