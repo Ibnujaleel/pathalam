@@ -1,0 +1,497 @@
+/* style.css - Cyberpunk-Kerala Glassmorphic Styling for Maveli AI Projector */
+
+:root {
+  --bg-dark: #0a0b10;
+  --panel-bg: rgba(18, 20, 32, 0.85);
+  --panel-border: rgba(212, 175, 55, 0.4);
+  --gold-glow: #d4af37;
+  --gold-kasavu: #ffd700;
+  --cyan-neon: #00e5ff;
+  --emerald-neon: #00ff88;
+  --amber-neon: #ff9900;
+  --crimson-neon: #ff2255;
+  --text-main: #f0f4fc;
+  --text-dim: #8b95a8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-main);
+  user-select: none;
+}
+
+#theme-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hud-container {
+  position: relative;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 11, 16, 0.4) 0%, rgba(5, 6, 10, 0.85) 100%);
+}
+
+/* Header */
+.hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-bottom: 2px solid var(--gold-glow);
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.crown-icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+.main-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--gold-kasavu);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+.sub-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+/* HP Bar Center */
+.status-center {
+  flex: 1;
+  max-width: 380px;
+  margin: 0 2rem;
+}
+
+.hp-gauge-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hp-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hp-title {
+  color: var(--gold-glow);
+}
+
+.hp-value {
+  color: var(--emerald-neon);
+}
+
+.hp-bar-track {
+  width: 100%;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hp-bar-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--emerald-neon), var(--gold-kasavu));
+  box-shadow: 0 0 10px var(--emerald-neon);
+  transition: width 0.2s ease-out, background 0.3s;
+}
+
+/* Metrics Right */
+.metrics-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  min-width: 100px;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.text-gold { color: var(--gold-kasavu); text-shadow: 0 0 8px rgba(255, 215, 0, 0.5); }
+.text-emerald { color: var(--emerald-neon); text-shadow: 0 0 8px rgba(0, 255, 136, 0.5); }
+.text-amber { color: var(--amber-neon); text-shadow: 0 0 8px rgba(255, 153, 0, 0.5); }
+
+/* Main Stage */
+.hud-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 860px;
+  background: var(--panel-bg);
+  border: 2px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 2.2rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Title Card */
+.title-card {
+  text-align: center;
+}
+
+.title-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cyan-neon);
+  border: 1px solid var(--cyan-neon);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.hero-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--gold-kasavu);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #cfd8e8;
+  max-width: 680px;
+  margin: 0 auto 2rem auto;
+}
+
+.pulse-button-prompt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-kasavu);
+  padding: 1rem 2rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 2px solid var(--gold-glow);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+/* Crisis Card */
+.crisis-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.theme-tag, .action-tag, .time-limit-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+}
+
+.theme-tag {
+  background: rgba(255, 153, 0, 0.15);
+  border: 1px solid var(--amber-neon);
+  color: var(--amber-neon);
+}
+
+.action-tag {
+  background: rgba(0, 229, 255, 0.15);
+  border: 1px solid var(--cyan-neon);
+  color: var(--cyan-neon);
+}
+
+.time-limit-tag {
+  background: rgba(255, 34, 85, 0.15);
+  border: 1px solid var(--crimson-neon);
+  color: var(--crimson-neon);
+}
+
+.crisis-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.crisis-description {
+  font-size: 1.15rem;
+  color: #c0cadb;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Malayalam Subtitle Bubble */
+.malayalam-bubble {
+  background: rgba(10, 12, 20, 0.9);
+  border: 1px solid var(--panel-border);
+  border-left: 4px solid var(--gold-kasavu);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.officer-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-glow);
+  margin-bottom: 0.5rem;
+}
+
+.malayalam-content {
+  font-family: 'Manjari', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Live Player Speech-To-Text Recognition Banner */
+.stt-live-box {
+  background: rgba(0, 30, 20, 0.85);
+  border: 1px solid var(--emerald-neon);
+  border-left: 4px solid var(--emerald-neon);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+.stt-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--emerald-neon);
+  margin-bottom: 0.4rem;
+  letter-spacing: 1px;
+}
+
+.stt-content {
+  font-family: 'Manjari', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+}
+
+/* Game Over Card */
+.game-over-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  color: var(--crimson-neon);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.final-score-row {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.review-box {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.review-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-kasavu);
+  margin-bottom: 0.6rem;
+}
+
+.review-body {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #e0e8f8;
+}
+
+/* Bottom Dock */
+.hud-dock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.dock-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.dock-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-glow);
+  margin-bottom: 0.8rem;
+}
+
+.sensor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1.5rem;
+}
+
+.sensor-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-dim);
+}
+
+.gauge-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gauge-fill {
+  height: 100%;
+  width: 50%;
+  transition: width 0.15s ease-out;
+}
+
+.fill-amber { background: var(--amber-neon); box-shadow: 0 0 6px var(--amber-neon); }
+.fill-cyan { background: var(--cyan-neon); box-shadow: 0 0 6px var(--cyan-neon); }
+.fill-gold { background: var(--gold-kasavu); box-shadow: 0 0 6px var(--gold-kasavu); }
+.fill-emerald { background: var(--emerald-neon); box-shadow: 0 0 6px var(--emerald-neon); }
+
+/* Keycaps */
+.keycap-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.keycap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.key-letter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.key-sub {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.keycap.active {
+  border-color: var(--gold-kasavu);
+  background: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 20px var(--gold-kasavu);
+  transform: translateY(-2px);
+}
+
+.keycap.active .key-letter {
+  color: var(--gold-kasavu);
+}
+
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+  to { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}

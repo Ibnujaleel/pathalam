@@ -1,0 +1,25 @@
+# Virtual environments & dependencies
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# API Keys and Environment Variables
+.env
+
+# Generated cache and audio artifacts
+display/audio_cache/
+*.mp3
+*.wav
+
+# Temporary / Scratch files
+Untitled-1.txt
+*.tmp
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+pyserial>=3.5
+python-dotenv>=1.0.0
+requests>=2.31.0
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+websockets>=12.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+pygame-ce>=2.5.0
+sounddevice>=0.4.6
+edge-tts>=6.1.0
+aiofiles>=23.2.1
